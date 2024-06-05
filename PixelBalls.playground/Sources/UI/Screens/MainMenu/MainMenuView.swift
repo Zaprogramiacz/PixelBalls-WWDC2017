@@ -159,10 +159,10 @@ private extension MainMenuView {
             let animation = CASpringAnimation(keyPath: "position.y")
             animation.fromValue = (3*(frame.size.height/2))
             animation.duration = 1.4
-            animation.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseOut)
+            animation.timingFunction = CAMediaTimingFunction(name: .easeOut)
             animation.damping = 10
             animation.beginTime = CACurrentMediaTime() + 0.3
-            animation.fillMode = kCAFillModeBackwards
+            animation.fillMode = .backwards
             return animation
         }
 
@@ -171,9 +171,9 @@ private extension MainMenuView {
             animation.fromValue = 0
             animation.toValue = 1
             animation.duration = 1
-            animation.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseOut)
+            animation.timingFunction = CAMediaTimingFunction(name: .easeOut)
             animation.beginTime = CACurrentMediaTime() + 0.3
-            animation.fillMode = kCAFillModeBackwards
+            animation.fillMode = .backwards
             return animation
         }
 
@@ -182,16 +182,16 @@ private extension MainMenuView {
             animation.fromValue = 0
             animation.toValue = 1
             animation.duration = 1
-            animation.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseOut)
+            animation.timingFunction = CAMediaTimingFunction(name: .easeOut)
             animation.beginTime = CACurrentMediaTime() + 0.2
-            animation.fillMode = kCAFillModeBackwards
+            animation.fillMode = .backwards
             return animation
         }
     }
 
 }
 
-protocol MainMenuViewDelegate: class {
+protocol MainMenuViewDelegate: AnyObject {
     func didTapNewGame()
     func didTapAbout()
 }

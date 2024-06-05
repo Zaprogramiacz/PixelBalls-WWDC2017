@@ -274,14 +274,14 @@ private extension NewGameView {
             let animation = CABasicAnimation(keyPath: "position.y")
             animation.fromValue = (3*(frame.size.height/2))
             animation.duration = 0.4
-            animation.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseOut)
-            animation.fillMode = kCAFillModeBackwards
+            animation.timingFunction = CAMediaTimingFunction(name: .easeOut)
+            animation.fillMode = .backwards
             return animation
         }
 
         static func showGameOverAnimation() -> CATransition {
             let animation = CATransition()
-            animation.type = kCATransitionFade
+            animation.type = .fade
             animation.duration = 0.5
             return animation
         }
@@ -289,6 +289,6 @@ private extension NewGameView {
 
 }
 
-protocol NewGameViewDelegate: class {
+protocol NewGameViewDelegate: AnyObject {
     func didTapBackButton()
 }

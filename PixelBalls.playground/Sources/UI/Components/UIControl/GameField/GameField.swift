@@ -37,9 +37,10 @@ final class GameField: UIControl {
     // MARK: Button action
 
     private func configureButtonAction() {
-        addTarget(self, action: #selector(PixelButton.didTapOnButton), for: .touchUpInside)
+        addTarget(self, action: #selector(didTapOnButton), for: .touchUpInside)
     }
 
+    @objc
     func didTapOnButton() {
         buttonActionClosure?()
     }
@@ -102,7 +103,7 @@ private extension GameField {
         static func createBallTransitionAnimation() -> CATransition {
             let animation = CATransition()
             animation.duration = 0.3
-            animation.type = kCATransitionFade
+            animation.type = .fade
             return animation
         }
     }

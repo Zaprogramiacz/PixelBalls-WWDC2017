@@ -23,9 +23,10 @@ public final class PixelButton: UIControl {
     // MARK: Button action
 
     private func configureButtonAction() {
-        addTarget(self, action: #selector(PixelButton.didTapOnButton), for: .touchUpInside)
+        addTarget(self, action: #selector(didTapOnButton), for: .touchUpInside)
     }
 
+    @objc
     func didTapOnButton() {
         buttonActionClosure?()
     }

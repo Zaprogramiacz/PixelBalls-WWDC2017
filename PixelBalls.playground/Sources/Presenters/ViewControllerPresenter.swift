@@ -1,6 +1,6 @@
 import UIKit
 
-public protocol Presenter: class {
+public protocol Presenter: AnyObject {
     var viewController: UIViewController? { get set }
 
     func push(viewController: UIViewController)

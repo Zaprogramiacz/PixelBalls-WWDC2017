@@ -55,7 +55,7 @@ final public class BackgroundView: UIView {
         animation.fromValue = 0
         animation.toValue = 1
         animation.duration = Double(duration)
-        animation.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseInEaseOut)
+        animation.timingFunction = CAMediaTimingFunction(name: .easeInEaseOut)
         return animation
     }
     
